@@ -248,7 +248,8 @@ a { color: inherit; text-decoration: none; }
 /* Product mockup samples */
 .mockups { margin-top: 2.6rem; }
 .mockups__label { font-weight: 800; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--lime); text-align: center; margin-bottom: 1.2rem; }
-.mockups__grid { display: grid; grid-template-columns: repeat(auto-fill, 192px); gap: 1rem; justify-content: center; }
+.mockups__grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+.mockup { width: 192px; }
 .mockup { position: relative; border: 2px solid var(--line); overflow: hidden; transition: border-color .25s, transform .25s var(--ease); }
 .mockup:hover { border-color: var(--lime); transform: translateY(-3px); }
 .mockup img { width: 192px; height: 256px; object-fit: cover; display: block; }
