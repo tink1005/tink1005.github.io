@@ -1,15 +1,16 @@
 # Studio Vale Agency
 
-The website for **Studio Vale Agency** — a boutique web design studio in
-Launceston, Tasmania (formerly TiinkTech). We design and build websites for
-small and local businesses.
+The website for **Studio Vale Agency** — a Launceston, Tasmania digital agency
+(formerly TiinkTech). Core services: **websites** and **social media
+management**, plus AI workflows and agency management.
 
 Lives at the GitHub **root user page**: **https://tink1005.github.io**
 
-## Stack
-Plain HTML / CSS / vanilla JS — no build step. Fonts: Fraunces + Archivo +
-Space Mono (Google Fonts). Theme is a warm editorial light palette (paper /
-ink / pine green / clay) — all in CSS variables at `:root` in `styles.css`.
+## Design
+Black + acid-lime (`#050505` / `#ccff00`), Inter 900 uppercase headlines, sharp
+0-radius edges, full-bleed black↔lime color-block sections. Design language taken
+from the original TiinkTech site. All tokens are CSS variables at `:root` in
+`styles.css`.
 
 ```
 index.html   structure & content
@@ -17,17 +18,17 @@ styles.css   the look
 script.js    nav, scroll reveals, contact form
 ```
 
-## Portfolio
-Case-study cards link to live work:
-- Wash Kings — https://tink1005.github.io/wash-kings/
-- Sentri Apparel — https://tink1005.github.io/sentri-apparel-mockup/
+## Sections
+Hero · Services (Websites + Management as centrepiece pillars, AI Workflows &
+Agency Management as supporting) · Work (Wash Kings, Sentri) · Pricing · CTA · Footer.
 
-Previews are CSS-rendered (no image files) so nothing can 404.
+## Pricing (from rate card)
+- Simple Site — $300 · Website + Store — $500 · Social Management — $300/mo
+- 50% deposit to begin, balance on delivery.
 
 ## Make it real
-- Wire the contact form to email (Web3Forms / Formspree).
+- Wire the contact form to email (Web3Forms / Formspree → harrisa1005@outlook.com).
 - Add a custom domain (e.g. `studiovale.com.au`) via repo Settings → Pages.
-- Swap CSS previews for real screenshots as the portfolio grows.
 
 ## Run locally
 ```bash
