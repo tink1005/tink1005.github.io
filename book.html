@@ -112,14 +112,18 @@
     (function () {
       var form = document.getElementById("book-form");
       var ok = document.getElementById("book-ok");
-      var ENDPOINT = "https://studio-vale-courses.harris971719.workers.dev/book";
+      // FormSubmit → emails each booking to harrisa1005@outlook.com (free, no backend).
+      var ENDPOINT = "https://formsubmit.co/ajax/harrisa1005@outlook.com";
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         if (!form.checkValidity()) { form.reportValidity(); return; }
         var data = Object.fromEntries(new FormData(form).entries());
+        data._subject = "📅 New free consultation request — Studio Vale";
+        data._template = "table";
+        data._captcha = "false";
         var btn = form.querySelector("button[type=submit]");
         btn.textContent = "Sending…";
-        fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
+        fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(data) })
           .catch(function(){})
           .finally(function () {
             form.querySelectorAll(".row, .bfield, .note").forEach(function(el){ el.style.display = "none"; });
