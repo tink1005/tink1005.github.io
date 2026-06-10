@@ -248,12 +248,12 @@ a { color: inherit; text-decoration: none; }
 /* Product mockup samples */
 .mockups { margin-top: 2.6rem; }
 .mockups__label { font-weight: 800; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--lime); text-align: center; margin-bottom: 1.2rem; }
-.mockups__grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-.mockup { width: 192px; }
-.mockup { position: relative; border: 2px solid var(--line); overflow: hidden; transition: border-color .25s, transform .25s var(--ease); }
-.mockup:hover { border-color: var(--lime); transform: translateY(-3px); }
-.mockup img { width: 192px; height: 256px; object-fit: cover; display: block; }
-.mockup figcaption { position: absolute; left: 0; right: 0; bottom: 0; background: linear-gradient(transparent, rgba(0,0,0,.9)); color: #fff; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 1.4rem .7rem .6rem; }
+.mockups__grid { display: flex; flex-wrap: wrap; gap: 1.8rem; justify-content: center; }
+.mockup { width: 300px; transition: transform .25s var(--ease); }
+.mockup:hover { transform: translateY(-3px); }
+.mockup img { width: 300px; height: 390px; object-fit: cover; display: block; border: 2px solid var(--line); transition: border-color .25s; }
+.mockup:hover img { border-color: var(--lime); }
+.mockup figcaption { color: var(--grey); font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding-top: .8rem; text-align: center; }
 @media (max-width: 760px) { .addons { grid-template-columns: 1fr; } }
 
 /* ───────────────────── Upgrade CTA block ───────────────────── */
