@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Free Consultation — Studio Vale Agency</title>
+  <meta name="description" content="Book a free, no-pressure consultation with Studio Vale Agency on Discord. Screenshare your site, see real mockups, and ask anything about websites, socials and getting found online." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050505'/%3E%3Ctext x='16' y='24' font-size='22' font-weight='900' text-anchor='middle' fill='%23ccff00' font-family='Arial'%3EV%3C/text%3E%3C/svg%3E" />
+  <style>
+    .book-hdr { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 1rem; padding: 1rem clamp(1rem,4vw,3rem); background: rgba(5,5,5,.85); backdrop-filter: blur(10px); border-bottom: 2px solid var(--lime); }
+    .book-hdr .back { margin-left: auto; font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--grey); }
+    .book-hdr .back:hover { color: var(--lime); }
+
+    .book-hero { max-width: 1000px; margin: 0 auto; padding: clamp(3rem,8vw,6rem) clamp(1rem,4vw,2rem) 2rem; text-align: center; }
+    .book-hero .pill { display: inline-block; font-weight: 800; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--black); background: var(--lime); padding: .35rem .8rem; }
+    .book-hero h1 { font-weight: 900; text-transform: uppercase; font-size: clamp(2.6rem,7vw,5rem); line-height: .95; letter-spacing: -0.03em; margin: 1.4rem 0; }
+    .book-hero h1 em { color: var(--lime); font-style: italic; }
+    .book-hero p { font-size: clamp(1.05rem,2vw,1.3rem); color: var(--grey); max-width: 46ch; margin: 0 auto; }
+    .free-badge { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.6rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; font-size: .85rem; color: var(--lime); border: 2px solid var(--lime); padding: .6rem 1.1rem; border-radius: 999px; }
+
+    .get { max-width: 1100px; margin: 0 auto; padding: 2rem clamp(1rem,4vw,2rem) 1rem; display: grid; grid-template-columns: repeat(2,1fr); gap: 1.2rem; }
+    .get__item { background: var(--card); border: 2px solid var(--line); padding: 1.8rem; display: flex; gap: 1.1rem; align-items: flex-start; transition: border-color .25s; }
+    .get__item:hover { border-color: var(--lime); }
+    .get__ic { font-size: 1.6rem; line-height: 1; }
+    .get__item h3 { font-weight: 800; text-transform: uppercase; font-size: 1.1rem; margin-bottom: .3rem; }
+    .get__item p { color: var(--grey); font-size: .95rem; }
+
+    .how { max-width: 1100px; margin: 0 auto; padding: 2.5rem clamp(1rem,4vw,2rem); }
+    .how h2, .form-wrap h2 { font-weight: 900; text-transform: uppercase; font-size: clamp(1.8rem,4vw,2.6rem); letter-spacing: -0.02em; text-align: center; margin-bottom: 2.2rem; }
+    .how h2 .lime, .form-wrap h2 .lime { color: var(--lime); }
+    .steps3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
+    .step3 { background: var(--card); border: 2px solid var(--line); padding: 1.8rem; }
+    .step3 .num { font-weight: 900; font-size: 2.2rem; color: var(--lime); line-height: 1; }
+    .step3 h3 { font-weight: 800; text-transform: uppercase; font-size: 1.15rem; margin: .8rem 0 .4rem; }
+    .step3 p { color: var(--grey); font-size: .95rem; }
+
+    .form-wrap { max-width: 760px; margin: 0 auto; padding: 1rem clamp(1rem,4vw,2rem) 4rem; }
+    .bform { background: var(--pine, #0f1100); border: 2px solid var(--lime); padding: clamp(1.6rem,4vw,2.6rem); display: grid; gap: 1rem; }
+    .bform .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .bfield { display: grid; gap: .35rem; }
+    .bfield.full { grid-column: 1 / -1; }
+    .bfield label { font-weight: 700; font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; color: var(--grey); }
+    .bfield input, .bfield textarea { font-family: var(--font); font-size: 1rem; color: var(--white); background: var(--black); border: 2px solid var(--line); border-radius: 0; padding: .8rem 1rem; resize: vertical; }
+    .bfield input:focus, .bfield textarea:focus { outline: none; border-color: var(--lime); }
+    .bform .note { font-size: .85rem; color: var(--grey-2); text-align: center; }
+    .bok { display: none; background: var(--lime); color: var(--black); font-weight: 800; padding: 1.2rem; text-align: center; text-transform: uppercase; letter-spacing: .04em; }
+    @media (max-width: 760px) { .get, .steps3 { grid-template-columns: 1fr; } .bform .row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="book-hdr">
+    <a class="wordmark" href="index.html">STUDIOVALEAGENCY<span class="dot">.</span></a>
+    <a class="back" href="index.html">← Back to site</a>
+  </header>
+
+  <section class="book-hero">
+    <span class="pill">Free · No pressure · On Discord</span>
+    <h1>Book a free<br><em>consultation.</em></h1>
+    <p>Hop on a quick Discord call, screenshare what you've got, and let's map out exactly how to get your business looking like a big deal. No cost, no sales pitch, no obligation.</p>
+    <div class="free-badge">✦ 100% free — keep the advice even if you don't hire me</div>
+  </section>
+
+  <section class="get">
+    <div class="get__item"><span class="get__ic">🖥️</span><div><h3>Screenshare your stuff</h3><p>Share your current website, Instagram or Google listing and I'll tell you — honestly — what's working and what's quietly costing you customers.</p></div></div>
+    <div class="get__item"><span class="get__ic">🎨</span><div><h3>See real mockups</h3><p>I'll show you concepts and ideas built for <em>your</em> business, so you can actually picture what a proper site or refresh would look like.</p></div></div>
+    <div class="get__item"><span class="get__ic">💬</span><div><h3>Ask me anything</h3><p>Websites, socials, getting found on Google, pricing, where on earth to start — bring every question. No such thing as a silly one.</p></div></div>
+    <div class="get__item"><span class="get__ic">🗺️</span><div><h3>Leave with a clear plan</h3><p>You'll walk away knowing your exact next steps and what it'd cost — whether you do it yourself, grab a course, or have me do it for you.</p></div></div>
+  </section>
+
+  <section class="how">
+    <h2>How it works<span class="lime">.</span></h2>
+    <div class="steps3">
+      <div class="step3"><div class="num">01</div><h3>Tell me a bit</h3><p>Fill in the quick form below — just so I know your business and what you're after before we talk.</p></div>
+      <div class="step3"><div class="num">02</div><h3>We lock a time on Discord</h3><p>I'll message you to confirm a time that suits, and send the Discord link. Easy.</p></div>
+      <div class="step3"><div class="num">03</div><h3>Jump on the call</h3><p>20–30 minutes: screenshare, mockups, all your questions answered. Friendly and pressure-free.</p></div>
+    </div>
+  </section>
+
+  <section class="form-wrap">
+    <h2>Grab your free call<span class="lime">.</span></h2>
+    <form class="bform" id="book-form" novalidate>
+      <div class="row">
+        <div class="bfield"><label for="bname">Your name</label><input id="bname" name="name" type="text" placeholder="Name" required /></div>
+        <div class="bfield"><label for="bbiz">Business</label><input id="bbiz" name="business" type="text" placeholder="Business name" /></div>
+      </div>
+      <div class="row">
+        <div class="bfield"><label for="bdiscord">Discord username</label><input id="bdiscord" name="discord" type="text" placeholder="e.g. yourname#0000 (or leave email)" /></div>
+        <div class="bfield"><label for="bemail">Email or phone</label><input id="bemail" name="email" type="text" placeholder="So I can reach you" required /></div>
+      </div>
+      <div class="bfield full"><label for="bwhen">Best days/times for you</label><input id="bwhen" name="when" type="text" placeholder="e.g. weekday evenings, this Saturday morning" /></div>
+      <div class="bfield full"><label for="bwhat">What do you want help with?</label><textarea id="bwhat" name="message" rows="3" placeholder="Your website, socials, getting found on Google, just not sure where to start…"></textarea></div>
+      <button class="btn btn--lime btn--lg btn--block" type="submit">Request my free call →</button>
+      <p class="note">No cost. No obligation. I'll reply to confirm a time on Discord.</p>
+      <div class="bok" id="book-ok">✦ Got it! I'll be in touch shortly to lock in your free call.</div>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <span class="wordmark wordmark--sm">STUDIOVALEAGENCY<span class="dot">.</span></span>
+      <p>Free consultations for small businesses.<br>Launceston, Tasmania.</p>
+    </div>
+    <p class="footer__legal">© <span id="year"></span> Studio Vale Agency — Launceston, TAS</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    (function () {
+      var form = document.getElementById("book-form");
+      var ok = document.getElementById("book-ok");
+      var ENDPOINT = "https://studio-vale-courses.harris971719.workers.dev/book";
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        var data = Object.fromEntries(new FormData(form).entries());
+        var btn = form.querySelector("button[type=submit]");
+        btn.textContent = "Sending…";
+        fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
+          .catch(function(){})
+          .finally(function () {
+            form.querySelectorAll(".row, .bfield, .note").forEach(function(el){ el.style.display = "none"; });
+            btn.style.display = "none";
+            ok.style.display = "block";
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
