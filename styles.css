@@ -158,7 +158,7 @@ a { color: inherit; text-decoration: none; }
 .learn:hover { color: var(--white); border-color: var(--white); }
 
 /* ───────────────────── Work ───────────────────── */
-.work { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.work { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
 .proj { display: flex; flex-direction: column; }
 .proj__thumb {
   position: relative; aspect-ratio: 4 / 3; overflow: hidden;
@@ -184,6 +184,9 @@ a { color: inherit; text-decoration: none; }
 .sentri__sub { font-size: .54rem; letter-spacing: .22em; text-transform: uppercase; color: #9a9a9a; margin-top: .35rem; }
 /* CTA */
 .proj__thumb--cta { background: var(--black-2); border-style: dashed; border-color: var(--grey-2); }
+/* Product photo work card — image fills the thumb like the others */
+.proj__thumb--photo { background: #0a0a0a; padding: 0; }
+.proj__thumb--photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
 .cta__plus { font-size: 2.4rem; font-weight: 300; color: var(--lime); line-height: 1; }
 .cta__txt { font-weight: 800; text-transform: uppercase; font-size: 1.2rem; margin-top: .4rem; color: var(--white); }
 
@@ -300,10 +303,11 @@ a { color: inherit; text-decoration: none; }
     background: var(--black); border-bottom: 2px solid var(--lime); padding: 1.2rem clamp(1rem,4vw,3rem); gap: 1.1rem; }
   .pillars { grid-template-columns: 1fr; }
   .svc { grid-template-columns: 1fr 1fr; }
-  .work, .price { grid-template-columns: 1fr; }
+  .price { grid-template-columns: 1fr; }
+  .work { grid-template-columns: 1fr 1fr; }
   .courses { grid-template-columns: 1fr 1fr; }
   .footer { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 540px) {
-  .svc, .courses, .footer { grid-template-columns: 1fr; }
+  .svc, .work, .courses, .footer { grid-template-columns: 1fr; }
 }
