@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sailor Food Truck — Fresh Tasmanian Seafood, On The Street | Launceston</title>
+<meta name="description" content="Sailor Food Truck — fresh Tasmanian seafood, burgers & fried chicken, roaming Launceston. Salt & pepper calamari, fish 'n chips, soft-shell crab burgers, seafood chowder. Catering for weddings, functions & private events. 20 years' hospitality." />
+<meta property="og:title" content="Sailor Food Truck — Fresh Tasmanian Seafood" />
+<meta property="og:description" content="Off the boat, onto the street. Roaming Launceston with fresh Tassie seafood. Catering for events & weddings." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500;1,9..144,900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c1d2b'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle'%3E%E2%9A%93%3C/text%3E%3C/svg%3E" />
+
+<style>
+  :root{
+    --navy:#0c1d2b;        /* deep ocean */
+    --navy-2:#12293c;      /* raised panel */
+    --sand:#f6efe1;        /* warm cream */
+    --sand-dim:#e7dcc6;
+    --coral:#ff5a3c;       /* fresh catch */
+    --lemon:#f5c518;       /* citrus pop */
+    --foam:#9fc6c2;        /* sea foam */
+    --ink:#08151f;
+    --maxw:1200px;
+    --font-d:'Fraunces',Georgia,serif;
+    --font-b:'DM Sans',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--navy); color:var(--sand);
+    font-family:var(--font-b); font-size:17px; line-height:1.6;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  /* grain overlay */
+  body::after{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:200; opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode:overlay;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+
+  /* ---------- Header ---------- */
+  .hdr{
+    position:sticky; top:0; z-index:100;
+    display:flex; align-items:center; gap:1.4rem;
+    padding:.85rem clamp(1.1rem,4vw,2.5rem);
+    background:rgba(8,21,31,.82); backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(159,198,194,.18);
+  }
+  .brand{font-family:var(--font-d);font-weight:900;font-size:1.5rem;letter-spacing:-.01em;margin-right:auto;display:flex;align-items:center;gap:.45rem}
+  .brand .anchor{color:var(--coral)}
+  .hdr nav{display:flex;gap:1.6rem}
+  .hdr nav a{font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--sand-dim);transition:color .2s}
+  .hdr nav a:hover{color:var(--lemon)}
+  .hdr .call{font-weight:700;font-size:.9rem;color:var(--sand);white-space:nowrap}
+  .btn{
+    display:inline-block;font-family:var(--font-b);font-weight:700;font-size:.85rem;
+    letter-spacing:.04em;text-transform:uppercase;cursor:pointer;border:0;
+    padding:.85rem 1.4rem;border-radius:999px;transition:transform .18s,box-shadow .18s,background .2s;
+  }
+  .btn--coral{background:var(--coral);color:#fff;box-shadow:0 8px 24px -10px var(--coral)}
+  .btn--coral:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px var(--coral)}
+  .btn--lemon{background:var(--lemon);color:var(--ink)}
+  .btn--lemon:hover{transform:translateY(-2px)}
+  .btn--ghost{background:transparent;color:var(--sand);border:1.5px solid rgba(246,239,225,.35)}
+  .btn--ghost:hover{border-color:var(--lemon);color:var(--lemon)}
+  .btn--lg{padding:1.05rem 1.9rem;font-size:.95rem}
+  .nav-hide{display:flex}
+  .toggle{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
+  .toggle span{width:24px;height:2px;background:var(--lemon);display:block}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;padding:clamp(3rem,8vw,6rem) 0 clamp(2rem,5vw,3.5rem);overflow:hidden}
+  .hero::before{ /* radial ocean glow */
+    content:"";position:absolute;inset:-20% -10% auto -10%;height:120%;
+    background:radial-gradient(60% 50% at 70% 20%,rgba(159,198,194,.18),transparent 70%),
+               radial-gradient(45% 40% at 15% 80%,rgba(255,90,60,.14),transparent 70%);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+  .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--foam);margin-bottom:1.1rem}
+  .eyebrow::before{content:"";width:26px;height:1.5px;background:var(--coral)}
+  .hero h1{
+    font-family:var(--font-d);font-weight:900;line-height:.95;letter-spacing:-.02em;
+    font-size:clamp(2.9rem,7vw,5.4rem);
+  }
+  .hero h1 em{font-style:italic;color:var(--lemon)}
+  .hero h1 .coral{color:var(--coral)}
+  .hero p.lede{margin:1.5rem 0 2rem;font-size:clamp(1.05rem,1.6vw,1.22rem);color:var(--sand-dim);max-width:46ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.9rem}
+  .hero-meta{margin-top:2rem;display:flex;gap:1.8rem;flex-wrap:wrap}
+  .hero-meta div{display:flex;flex-direction:column;gap:.1rem}
+  .hero-meta b{font-family:var(--font-d);font-weight:900;font-size:1.5rem;color:var(--sand)}
+  .hero-meta span{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--foam)}
+
+  /* hero visual: stacked photo cards (placeholders ready for real photos) */
+  .hero-art{position:relative;height:clamp(340px,42vw,500px)}
+  .photo{
+    position:absolute;border-radius:18px;overflow:hidden;
+    background:var(--navy-2);border:1px solid rgba(159,198,194,.2);
+    box-shadow:0 30px 60px -30px #000;
+    display:flex;align-items:flex-end;
+  }
+  .photo .ph{ /* placeholder fill — swap for background-image:url(real-photo) */
+    position:absolute;inset:0;
+    background:linear-gradient(150deg,#14384a,#0c1d2b 60%);
+    display:grid;place-items:center;font-size:3.2rem;opacity:.9;
+  }
+  .photo .cap{position:relative;z-index:1;width:100%;padding:.7rem .9rem;font-size:.8rem;font-weight:700;
+    background:linear-gradient(transparent,rgba(8,21,31,.85));letter-spacing:.02em}
+  .photo.p1{inset:0 22% 28% 0;}
+  .photo.p1 .ph{background:linear-gradient(150deg,#1d4a55,#0c1d2b)}
+  .photo.p2{inset:38% 0 0 30%;}
+  .photo.p2 .ph{background:linear-gradient(150deg,#5a2a1f,#0c1d2b)}
+  .badge{
+    position:absolute;right:-6px;top:-14px;z-index:3;width:104px;height:104px;border-radius:50%;
+    background:var(--lemon);color:var(--ink);display:grid;place-items:center;text-align:center;
+    font-family:var(--font-d);font-weight:900;font-size:.82rem;line-height:1;transform:rotate(8deg);
+    box-shadow:0 12px 26px -12px var(--lemon); animation:bob 4s ease-in-out infinite;
+  }
+  @keyframes bob{50%{transform:rotate(8deg) translateY(-8px)}}
+
+  /* ---------- Marquee ---------- */
+  .marquee{border-top:1px solid rgba(159,198,194,.18);border-bottom:1px solid rgba(159,198,194,.18);
+    background:var(--coral);color:#fff;overflow:hidden;padding:.7rem 0}
+  .marquee .track{display:flex;white-space:nowrap;width:max-content;animation:slide 28s linear infinite}
+  .marquee span{font-family:var(--font-d);font-weight:900;font-size:1.15rem;font-style:italic;padding:0 1.3rem}
+  .marquee b{opacity:.55}
+  @keyframes slide{to{transform:translateX(-50%)}}
+
+  /* ---------- Sections ---------- */
+  section{padding:clamp(3.2rem,7vw,5.5rem) 0}
+  .shead{margin-bottom:2.4rem}
+  .shead .eyebrow{margin-bottom:.7rem}
+  .shead h2{font-family:var(--font-d);font-weight:900;font-size:clamp(2rem,4.5vw,3.2rem);line-height:1;letter-spacing:-.02em}
+  .shead p{margin-top:.8rem;color:var(--sand-dim);max-width:54ch}
+
+  /* Tonight board */
+  .board-sec{background:var(--navy-2);border-top:1px solid rgba(159,198,194,.15);border-bottom:1px solid rgba(159,198,194,.15)}
+  .board{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:rgba(159,198,194,.18);
+    border:1px solid rgba(159,198,194,.18);border-radius:16px;overflow:hidden;margin-top:.5rem}
+  .day{background:var(--navy);padding:1.3rem 1.1rem;transition:background .2s}
+  .day:hover{background:#16334a}
+  .day .dn{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--foam);font-weight:700}
+  .day .loc{font-family:var(--font-d);font-weight:900;font-size:1.18rem;margin:.5rem 0 .2rem;line-height:1.05}
+  .day .hr{font-size:.85rem;color:var(--sand-dim)}
+  .day.off .loc{color:#5b7383}
+  .day.today{background:linear-gradient(160deg,#1d4a55,#12293c);box-shadow:inset 0 0 0 2px var(--lemon)}
+  .day.today .dn{color:var(--lemon)}
+  .board-note{margin-top:1.1rem;font-size:.85rem;color:var(--foam)}
+  .board-note b{color:var(--lemon)}
+
+  /* Menu */
+  .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.3rem}
+  .dish{background:var(--navy-2);border:1px solid rgba(159,198,194,.16);border-radius:16px;overflow:hidden;
+    transition:transform .2s,border-color .2s}
+  .dish:hover{transform:translateY(-5px);border-color:var(--coral)}
+  .dish .img{aspect-ratio:4/3;display:grid;place-items:center;font-size:2.6rem;
+    background:linear-gradient(150deg,#16384a,#0c1d2b)}
+  .dish:nth-child(3n+2) .img{background:linear-gradient(150deg,#4a2b20,#0c1d2b)}
+  .dish:nth-child(3n) .img{background:linear-gradient(150deg,#1f4a44,#0c1d2b)}
+  .dish .body{padding:1rem 1.1rem 1.2rem}
+  .dish h3{font-family:var(--font-d);font-weight:900;font-size:1.18rem;line-height:1.05}
+  .dish p{font-size:.88rem;color:var(--sand-dim);margin-top:.35rem}
+  .dish .tag{display:inline-block;margin-top:.7rem;font-size:.68rem;font-weight:700;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--lemon);border:1px solid rgba(245,197,24,.4);border-radius:999px;padding:.2rem .6rem}
+
+  /* Catering */
+  .cater{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
+  .cater-copy ul{list-style:none;margin:1.4rem 0 0;display:grid;gap:.7rem}
+  .cater-copy li{padding-left:1.8rem;position:relative;color:var(--sand-dim)}
+  .cater-copy li::before{content:"⚓";position:absolute;left:0;color:var(--coral)}
+  .form{background:var(--navy-2);border:1px solid rgba(159,198,194,.18);border-radius:18px;padding:clamp(1.3rem,3vw,2rem)}
+  .form h3{font-family:var(--font-d);font-weight:900;font-size:1.5rem;margin-bottom:.3rem}
+  .form .sub{font-size:.88rem;color:var(--foam);margin-bottom:1.3rem}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+  .field{display:grid;gap:.35rem;margin-bottom:.9rem}
+  .field label{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--foam)}
+  .field input,.field textarea{width:100%;box-sizing:border-box;font-family:var(--font-b);font-size:.95rem;
+    color:var(--sand);background:var(--navy);border:1.5px solid rgba(159,198,194,.22);border-radius:10px;padding:.75rem .9rem}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--lemon)}
+  .field textarea{resize:vertical;min-height:84px}
+  .form .note{font-size:.78rem;color:var(--foam);margin-top:.7rem}
+
+  /* Story */
+  .story{background:var(--navy-2);border-top:1px solid rgba(159,198,194,.15)}
+  .story .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+  .story-art{aspect-ratio:1;border-radius:20px;background:linear-gradient(150deg,#1d4a55,#0c1d2b);
+    display:grid;place-items:center;font-size:4.5rem;border:1px solid rgba(159,198,194,.2);position:relative}
+  .story-art .b{position:absolute;left:-14px;bottom:18px;background:var(--lemon);color:var(--ink);
+    font-family:var(--font-d);font-weight:900;font-size:1rem;padding:.6rem 1rem;border-radius:10px;transform:rotate(-4deg)}
+  .story h2{font-family:var(--font-d);font-weight:900;font-size:clamp(1.9rem,4vw,3rem);line-height:1.02;letter-spacing:-.02em}
+  .story p{margin-top:1.1rem;color:var(--sand-dim)}
+
+  /* Gallery */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.7rem}
+  .gtile{aspect-ratio:1;border-radius:12px;display:grid;place-items:center;font-size:2rem;
+    background:linear-gradient(150deg,#16384a,#0c1d2b);border:1px solid rgba(159,198,194,.14)}
+  .gtile:nth-child(2n){background:linear-gradient(150deg,#4a2b20,#0c1d2b)}
+  .gtile:nth-child(3n){background:linear-gradient(150deg,#1f4a44,#0c1d2b)}
+
+  /* CTA strip */
+  .cta-strip{background:var(--coral);color:#fff;text-align:center;border-radius:22px;padding:clamp(2.2rem,5vw,3.5rem);margin:0 auto}
+  .cta-strip h2{font-family:var(--font-d);font-weight:900;font-size:clamp(1.9rem,4.5vw,3rem);line-height:1.02}
+  .cta-strip p{margin:.8rem auto 1.6rem;max-width:44ch;opacity:.92}
+  .cta-strip .btn--lemon{box-shadow:0 14px 30px -12px rgba(0,0,0,.4)}
+
+  /* Footer */
+  footer{padding:clamp(2.5rem,5vw,3.5rem) 0 2.5rem;border-top:1px solid rgba(159,198,194,.18)}
+  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
+  .foot h4{font-family:var(--font-d);font-weight:900;font-size:1.4rem;margin-bottom:.5rem}
+  .foot p,.foot a{font-size:.9rem;color:var(--sand-dim);display:block;margin-bottom:.4rem}
+  .foot a:hover{color:var(--lemon)}
+  .foot .ttl{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--foam);margin-bottom:.8rem;font-weight:700}
+  .credit{margin-top:2.5rem;padding-top:1.4rem;border-top:1px solid rgba(159,198,194,.14);
+    font-size:.78rem;color:var(--foam);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  .credit a{color:var(--lemon);font-weight:700}
+
+  /* reveal */
+  .rv{opacity:0;transform:translateY(22px);animation:rise .8s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.rv{animation:none;opacity:1;transform:none}.marquee .track,.badge{animation:none}}
+
+  /* responsive */
+  @media(max-width:880px){
+    .hdr nav,.hdr .call{display:none}
+    .toggle{display:flex}
+    .hero .wrap{grid-template-columns:1fr}
+    .hero-art{order:-1;height:300px}
+    .cater,.story .wrap{grid-template-columns:1fr}
+    .foot{grid-template-columns:1fr 1fr}
+    .frow{grid-template-columns:1fr}
+  }
+  @media(max-width:520px){.foot{grid-template-columns:1fr}.hero-meta{gap:1.2rem}}
+</style>
+</head>
+<body>
+
+<!-- ░░ NOTE: This is a CONCEPT / sample site built by Studio Vale Agency to show what
+     Sailor Food Truck's website could look like. Placeholder food tiles (the gradient
+     blocks with emoji) are where real photos drop in. Not affiliated / not live for the business. ░░ -->
+
+<header class="hdr">
+  <a href="#top" class="brand"><span class="anchor">⚓</span>Sailor</a>
+  <nav class="nav-hide">
+    <a href="#tonight">Find Us</a>
+    <a href="#menu">Menu</a>
+    <a href="#catering">Catering</a>
+    <a href="#story">Our Story</a>
+  </nav>
+  <a href="tel:0497363476" class="call">📞 0497 363 476</a>
+  <a href="#catering" class="btn btn--coral">Book Us</a>
+  <button class="toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow rv">Roaming Launceston · Tasmania</span>
+      <h1 class="rv" style="animation-delay:.05s">Off the boat,<br/><span class="coral">onto</span> the <em>street.</em></h1>
+      <p class="lede rv" style="animation-delay:.12s">Fresh Tasmanian seafood, hand-battered and char-grilled out of our truck — plus burgers, fried chicken and the best chowder in the north. Twenty years of hospitality, served from a window.</p>
+      <div class="hero-cta rv" style="animation-delay:.18s">
+        <a href="#tonight" class="btn btn--lemon btn--lg">Where are we tonight?</a>
+        <a href="#catering" class="btn btn--ghost btn--lg">Book us for your event</a>
+      </div>
+      <div class="hero-meta rv" style="animation-delay:.24s">
+        <div><b>20 yrs</b><span>Hospitality</span></div>
+        <div><b>100%</b><span>Fresh Tassie produce</span></div>
+        <div><b>7 days</b><span>On the road</span></div>
+      </div>
+    </div>
+    <div class="hero-art rv" style="animation-delay:.1s">
+      <div class="badge">FRESH<br/>OFF THE<br/>BOAT</div>
+      <div class="photo p1"><div class="ph">🦑</div><div class="cap">Salt &amp; pepper calamari</div></div>
+      <div class="photo p2"><div class="ph">🍔</div><div class="cap">Soft-shell crab burger</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Fish 'n Chips</span><b>✦</b><span>Salt &amp; Pepper Calamari</span><b>✦</b><span>Soft-Shell Crab Burger</span><b>✦</b><span>Seafood Chowder</span><b>✦</b><span>Buttermilk Fried Chicken</span><b>✦</b><span>Char-Grilled Ribs</span><b>✦</b><span>Mussels</span><b>✦</b>
+    <span>Fish 'n Chips</span><b>✦</b><span>Salt &amp; Pepper Calamari</span><b>✦</b><span>Soft-Shell Crab Burger</span><b>✦</b><span>Seafood Chowder</span><b>✦</b><span>Buttermilk Fried Chicken</span><b>✦</b><span>Char-Grilled Ribs</span><b>✦</b><span>Mussels</span><b>✦</b>
+  </div>
+</div>
+
+<!-- TONIGHT BOARD -->
+<section class="board-sec" id="tonight">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">This week's stops</span>
+      <h2>Where's the boat parked?</h2>
+      <p>We move around the north all week. Here's where to find the window — no more scrolling Facebook to catch us.</p>
+    </div>
+    <div class="board">
+      <div class="day off"><div class="dn">Mon</div><div class="loc">Resting</div><div class="hr">Back tomorrow</div></div>
+      <div class="day"><div class="dn">Tue</div><div class="loc">St Georges Sq</div><div class="hr">5–8pm</div></div>
+      <div class="day"><div class="dn">Wed</div><div class="loc">Inveresk Precinct</div><div class="hr">5–8pm</div></div>
+      <div class="day"><div class="dn">Thu</div><div class="loc">Deloraine</div><div class="hr">5–8:30pm</div></div>
+      <div class="day today"><div class="dn">Fri · Tonight</div><div class="loc">Eat Street, High St</div><div class="hr">5–9pm</div></div>
+      <div class="day"><div class="dn">Sat</div><div class="loc">City Park Market</div><div class="hr">11am–3pm</div></div>
+      <div class="day"><div class="dn">Sun</div><div class="loc">Cataract Gorge</div><div class="hr">11am–4pm</div></div>
+    </div>
+    <p class="board-note">⚓ Locations can shift with the weather — <b>follow @sailorfoodtruck</b> for day-of updates, or this board's kept current each week.</p>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">From the sea &amp; the grill</span>
+      <h2>The menu</h2>
+      <p>Battered to order, char-grilled over flame, never frozen. Caught and made with fresh Tasmanian produce wherever we can.</p>
+    </div>
+    <div class="menu-grid">
+      <article class="dish"><div class="img">🦑</div><div class="body"><h3>Salt &amp; Pepper Calamari</h3><p>Tender, lightly spiced, fried golden. The one everyone comes back for.</p><span class="tag">House favourite</span></div></article>
+      <article class="dish"><div class="img">🍟</div><div class="body"><h3>Fish 'n Chips</h3><p>Freshly battered Tassie fish with hand-cut chips and tartare.</p></div></article>
+      <article class="dish"><div class="img">🦀</div><div class="body"><h3>Soft-Shell Crab Burger</h3><p>Crisp soft-shell crab, slaw and house sauce in a toasted brioche bun.</p><span class="tag">Signature</span></div></article>
+      <article class="dish"><div class="img">🍲</div><div class="body"><h3>Seafood Chowder</h3><p>Creamy, loaded with the day's catch. Best in the north, we reckon.</p></div></article>
+      <article class="dish"><div class="img">🍗</div><div class="body"><h3>Buttermilk Fried Chicken Burger</h3><p>Twice-marinated, super-crunchy, with pickles and slaw.</p></div></article>
+      <article class="dish"><div class="img">🔥</div><div class="body"><h3>Char-Grilled Ribs</h3><p>Sticky, slow char-grilled "dinosaur" ribs that fall off the bone.</p></div></article>
+      <article class="dish"><div class="img">🦐</div><div class="body"><h3>Mussels &amp; Garlic Bread</h3><p>Steamed Tassie mussels in white wine &amp; garlic, bread to mop it up.</p></div></article>
+      <article class="dish"><div class="img">🍰</div><div class="body"><h3>House Cheesecake</h3><p>Made fresh — ask the window what flavour's on today.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- CATERING -->
+<section class="board-sec" id="catering">
+  <div class="wrap cater">
+    <div class="cater-copy">
+      <span class="eyebrow">Weddings · functions · private events</span>
+      <h2 style="font-family:var(--font-d);font-weight:900;font-size:clamp(1.9rem,4vw,3rem);line-height:1.02;letter-spacing:-.02em">Bring the boat to your big day.</h2>
+      <p style="margin-top:1rem;color:var(--sand-dim)">We cater weddings, birthdays, work functions and parties right across northern Tasmania — fresh seafood and crowd-pleasers cooked on-site, with twenty years of hospitality behind the window.</p>
+      <ul>
+        <li>Weddings &amp; engagement parties</li>
+        <li>Corporate &amp; work functions</li>
+        <li>Birthdays, milestones &amp; private parties</li>
+        <li>Markets, festivals &amp; community events</li>
+        <li>Flexible menus to suit your guests &amp; budget</li>
+      </ul>
+    </div>
+    <form class="form" id="cater-form" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('cater-ok').style.display='block';">
+      <h3>Get a quote</h3>
+      <p class="sub">Tell us about your event — we'll get straight back to you.</p>
+      <div class="frow">
+        <div class="field"><label>Your name</label><input type="text" required placeholder="First &amp; last" /></div>
+        <div class="field"><label>Phone</label><input type="tel" required placeholder="04xx xxx xxx" /></div>
+      </div>
+      <div class="frow">
+        <div class="field"><label>Email</label><input type="email" required placeholder="you@email.com" /></div>
+        <div class="field"><label>Event date</label><input type="text" placeholder="e.g. Sat 14 Mar" /></div>
+      </div>
+      <div class="field"><label>How many guests?</label><input type="text" placeholder="Approx. number" /></div>
+      <div class="field"><label>Tell us about it</label><textarea placeholder="Type of event, location, what you're after…"></textarea></div>
+      <button type="submit" class="btn btn--coral btn--lg" style="width:100%">Send my enquiry →</button>
+      <p class="note">No obligation — we'll reply with ideas &amp; a rough quote. Or call us on 0497 363 476.</p>
+    </form>
+    <div id="cater-ok" style="display:none" class="form">
+      <h3>⚓ Anchors aweigh!</h3>
+      <p class="sub" style="margin-bottom:0">Thanks — your enquiry's in. We'll be in touch within a day to talk menus and dates.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="wrap">
+    <div class="story-art">⚓<div class="b">Since the docks</div></div>
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h2>Twenty years of hospitality, one little window.</h2>
+      <p>Sailor started with a simple idea: proper, fresh seafood shouldn't need a white tablecloth. After two decades cooking around Tasmania, we put it all into a truck — so the good stuff comes to you, wherever you are.</p>
+      <p>Everything's made to order with fresh Tassie produce wherever we can get it. No freezers full of pre-made anything — just real food, cooked when you order it, served with a smile from the window.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Straight off the grill</span>
+      <h2>From the window</h2>
+      <p>Tag us <strong style="color:var(--lemon)">@sailorfoodtruck</strong> and your feed could end up here.</p>
+    </div>
+    <div class="gallery">
+      <div class="gtile">🦑</div><div class="gtile">🍟</div><div class="gtile">🦀</div><div class="gtile">🍔</div>
+      <div class="gtile">🍲</div><div class="gtile">🔥</div><div class="gtile">🦐</div><div class="gtile">🍰</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section>
+  <div class="wrap">
+    <div class="cta-strip">
+      <h2>Hungry yet?</h2>
+      <p>Catch the window tonight, or book us to cook at your next event.</p>
+      <a href="#tonight" class="btn btn--lemon btn--lg">Find tonight's stop</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h4><span style="color:var(--coral)">⚓</span> Sailor Food Truck</h4>
+        <p>Fresh Tasmanian seafood, burgers &amp; fried chicken — roaming Launceston &amp; northern Tassie, seven days a week.</p>
+      </div>
+      <div>
+        <div class="ttl">Find us</div>
+        <a href="https://www.facebook.com/sailorfoodtruck/" target="_blank" rel="noopener">Facebook →</a>
+        <a href="https://www.instagram.com/sailorfoodtruck/" target="_blank" rel="noopener">Instagram →</a>
+        <a href="#tonight">This week's stops →</a>
+      </div>
+      <div>
+        <div class="ttl">Get in touch</div>
+        <a href="tel:0497363476">📞 0497 363 476</a>
+        <a href="#catering">Book catering →</a>
+        <p>Launceston &amp; surrounds, TAS</p>
+      </div>
+    </div>
+    <div class="credit">
+      <span>© Sailor Food Truck. Hand-made in Tasmania.</span>
+      <span>Concept site by <a href="https://studiovaleagency.com" target="_blank" rel="noopener">Studio Vale Agency</a> — sample only</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle (simple)
+  document.querySelector('.toggle').addEventListener('click',function(){
+    var n=document.querySelector('.hdr nav');
+    var open=n.style.display==='flex';
+    n.style.display=open?'none':'flex';
+    n.style.position='absolute';n.style.top='100%';n.style.left='0';n.style.right='0';
+    n.style.flexDirection='column';n.style.background='var(--navy)';n.style.padding='1.2rem 1.5rem';
+    n.style.gap='1rem';n.style.borderBottom='1px solid rgba(159,198,194,.2)';
+  });
+</script>
+</body>
+</html>
