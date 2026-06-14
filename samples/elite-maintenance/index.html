@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elite Maintenance Services Tasmania — Roof, Gutter &amp; Pressure Cleaning | Launceston</title>
+<meta name="description" content="Elite Maintenance Services Tasmania — roof, gutter & downpipe cleaning, solar panel cleaning, high-pressure cleaning, lawn mowing, tree lopping & end-of-lease cleans across Launceston & northern Tasmania. Free quotes. Call 0459 616 119." />
+<meta property="og:title" content="Elite Maintenance Services Tasmania — Launceston" />
+<meta property="og:description" content="Roof, gutter & pressure cleaning, solar, mowing & more across Launceston. 92% recommended. Free quotes — call 0459 616 119." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230e7cff'/%3E%3Ctext x='16' y='22' font-size='15' font-weight='900' text-anchor='middle' fill='white' font-family='Arial'%3EEM%3C/text%3E%3C/svg%3E" />
+<style>
+  :root{
+    --ink:#0f2433;          /* deep slate text */
+    --ink-2:#33485a;
+    --muted:#5d7185;
+    --accent:#0e7cff;       /* trustworthy trade blue — SWAP to their real brand colour */
+    --accent-dk:#0a5fc6;
+    --accent-soft:#e8f1ff;
+    --cta:#ff8a1e;          /* warm "free quote" pop */
+    --bg:#f4f7fa;
+    --white:#ffffff;
+    --line:#e2e9f0;
+    --ok:#1ba85f;
+    --maxw:1180px;
+    --fd:'Archivo',system-ui,sans-serif;
+    --fb:'Manrope',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--fb);color:var(--ink);background:var(--bg);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.1rem,4vw,2.2rem)}
+  h1,h2,h3{font-family:var(--fd);line-height:1.05;letter-spacing:-.02em}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--fd);font-weight:800;font-size:.95rem;
+    padding:.95rem 1.6rem;border-radius:10px;cursor:pointer;border:0;transition:transform .15s,box-shadow .15s,background .2s}
+  .btn--cta{background:var(--cta);color:#3a1c00;box-shadow:0 10px 24px -10px var(--cta)}
+  .btn--cta:hover{transform:translateY(-2px)}
+  .btn--accent{background:var(--accent);color:#fff;box-shadow:0 10px 24px -12px var(--accent)}
+  .btn--accent:hover{transform:translateY(-2px);background:var(--accent-dk)}
+  .btn--ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+  .btn--ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .btn--lg{padding:1.1rem 1.9rem;font-size:1.02rem}
+
+  /* Header */
+  .hdr{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .hdr .wrap{display:flex;align-items:center;gap:1.2rem;padding:.7rem clamp(1.1rem,4vw,2.2rem)}
+  .logo{display:flex;align-items:center;gap:.6rem;margin-right:auto}
+  .logo .mark{width:40px;height:40px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;
+    font-family:var(--fd);font-weight:900;font-size:1.05rem;letter-spacing:-.03em}
+  .logo b{font-family:var(--fd);font-weight:800;font-size:1.02rem;line-height:1;display:block}
+  .logo span{font-size:.72rem;color:var(--muted);letter-spacing:.04em}
+  .hdr nav{display:flex;gap:1.5rem}
+  .hdr nav a{font-weight:600;font-size:.9rem;color:var(--ink-2)}
+  .hdr nav a:hover{color:var(--accent)}
+  .hdr .phone{font-family:var(--fd);font-weight:800;color:var(--ink);white-space:nowrap}
+  .hdr .phone span{color:var(--accent)}
+  .toggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+  .toggle span{width:24px;height:2px;background:var(--accent);display:block}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;background:
+    radial-gradient(120% 90% at 80% -10%, var(--accent-soft), transparent 60%), var(--bg)}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.5rem,4vw,3.2rem);align-items:center;
+    padding:clamp(2.6rem,6vw,4.5rem) clamp(1.1rem,4vw,2.2rem)}
+  .chip{display:inline-flex;align-items:center;gap:.45rem;background:var(--accent-soft);color:var(--accent-dk);
+    font-weight:700;font-size:.8rem;padding:.4rem .8rem;border-radius:999px;margin-bottom:1.1rem}
+  .hero h1{font-size:clamp(2.3rem,5vw,3.7rem);font-weight:900}
+  .hero h1 .u{color:var(--accent)}
+  .hero p.lede{margin:1.2rem 0 1.8rem;font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--ink-2);max-width:48ch}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem}
+  .trust{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:2rem}
+  .trust div{display:flex;align-items:center;gap:.5rem;font-weight:600;font-size:.9rem;color:var(--ink-2)}
+  .trust .n{font-family:var(--fd);font-weight:900;color:var(--ink);font-size:1.15rem}
+  .stars{color:#f5a623;letter-spacing:1px}
+  /* hero card */
+  .hero-card{background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 60px -36px rgba(15,36,51,.45);overflow:hidden}
+  .hero-card .top{aspect-ratio:16/11;background:
+    linear-gradient(135deg,#0e3a5f,#0e7cff);display:grid;place-items:center;color:#fff;position:relative}
+  .hero-card .top .ic{font-size:3.4rem}
+  .hero-card .top .ph{position:absolute;bottom:.7rem;left:.9rem;font-size:.74rem;font-weight:700;letter-spacing:.04em;
+    background:rgba(0,0,0,.25);padding:.25rem .55rem;border-radius:6px}
+  .hero-card .bot{padding:1.1rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .hero-card .bot b{font-family:var(--fd);font-weight:800}
+  .hero-card .bot small{color:var(--muted);display:block;font-size:.8rem;font-weight:600}
+
+  /* Services */
+  section{padding:clamp(3rem,7vw,5rem) 0}
+  .shead{max-width:640px;margin:0 auto 2.6rem;text-align:center}
+  .shead .eyebrow{font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .shead h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:900;margin:.6rem 0 .5rem}
+  .shead p{color:var(--muted)}
+  .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.1rem}
+  .svc{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:1.5rem 1.4rem;transition:transform .18s,box-shadow .18s,border-color .18s}
+  .svc:hover{transform:translateY(-4px);box-shadow:0 18px 36px -24px rgba(15,36,51,.4);border-color:var(--accent)}
+  .svc .ic{width:46px;height:46px;border-radius:10px;background:var(--accent-soft);display:grid;place-items:center;font-size:1.4rem;margin-bottom:.9rem}
+  .svc h3{font-size:1.12rem;font-weight:800}
+  .svc p{margin-top:.35rem;font-size:.9rem;color:var(--muted)}
+
+  /* Why us */
+  .why{background:var(--ink);color:#fff}
+  .why .shead h2{color:#fff}
+  .why .shead p{color:#aab9c7}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem}
+  .why-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1.6rem}
+  .why-card .ic{font-size:1.7rem;margin-bottom:.7rem}
+  .why-card h3{font-size:1.1rem;font-weight:800}
+  .why-card p{margin-top:.4rem;font-size:.92rem;color:#aab9c7}
+
+  /* Gallery */
+  .gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem}
+  .gtile{aspect-ratio:4/3;border-radius:12px;background:linear-gradient(135deg,#0e3a5f,#0e7cff);display:grid;place-items:center;
+    color:#fff;font-size:.8rem;font-weight:700;text-align:center;border:1px solid var(--line);position:relative}
+  .gtile span{position:absolute;bottom:.5rem;font-size:.72rem;opacity:.85}
+  .gtile .ic{font-size:2rem}
+
+  /* Quote */
+  .quote{background:linear-gradient(135deg,var(--accent),#0a5fc6);color:#fff}
+  .quote .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem);align-items:center}
+  .quote h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:900}
+  .quote p{margin-top:.9rem;color:#dbe9ff;max-width:42ch}
+  .quote .callbig{margin-top:1.6rem;display:inline-flex;align-items:center;gap:.6rem;font-family:var(--fd);font-weight:900;
+    font-size:clamp(1.4rem,3vw,2rem);color:#fff}
+  .qform{background:#fff;border-radius:18px;padding:clamp(1.4rem,3vw,2rem);box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}
+  .qform h3{color:var(--ink);font-size:1.4rem;font-weight:900;margin-bottom:.3rem}
+  .qform .sub{color:var(--muted);font-size:.9rem;margin-bottom:1.2rem}
+  .qrow{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+  .qfield{display:grid;gap:.3rem;margin-bottom:.85rem}
+  .qfield label{font-weight:700;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+  .qfield input,.qfield select,.qfield textarea{width:100%;box-sizing:border-box;font-family:var(--fb);font-size:.95rem;
+    color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:9px;padding:.72rem .85rem}
+  .qfield input:focus,.qfield select:focus,.qfield textarea:focus{outline:none;border-color:var(--accent);background:#fff}
+  .qfield textarea{resize:vertical;min-height:74px}
+  .qnote{font-size:.78rem;color:var(--muted);margin-top:.6rem;text-align:center}
+
+  /* Area */
+  .area .wrap{text-align:center;max-width:760px}
+  .area h2{font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:900}
+  .area p{color:var(--muted);margin-top:.8rem}
+  .area .towns{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:1.6rem}
+  .area .towns span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.45rem 1rem;font-weight:600;font-size:.88rem;color:var(--ink-2)}
+
+  /* Footer */
+  footer{background:var(--ink);color:#fff;padding:clamp(2.4rem,5vw,3.4rem) 0 2.2rem}
+  .foot{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2rem}
+  .foot .logo b{color:#fff}.foot .logo span{color:#9fb1c0}
+  .foot p,.foot a{color:#aab9c7;font-size:.92rem;display:block;margin-bottom:.4rem}
+  .foot a:hover{color:#fff}
+  .foot .ttl{font-family:var(--fd);font-weight:800;color:#fff;font-size:.95rem;margin-bottom:.7rem}
+  .credit{margin-top:2.4rem;padding-top:1.3rem;border-top:1px solid rgba(255,255,255,.12);font-size:.78rem;color:#8aa0b2;
+    display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  .credit a{color:var(--accent);font-weight:700;display:inline}
+
+  @media(max-width:880px){
+    .hdr nav,.hdr .phone{display:none}.toggle{display:flex}
+    .hero .wrap,.quote .wrap{grid-template-columns:1fr}
+    .hero-card{order:-1}
+    .foot{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:520px){.qrow{grid-template-columns:1fr}.foot{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ░░ CONCEPT / sample site by Studio Vale Agency for Elite Maintenance Services Tasmania.
+     Brand colour (--accent) and logo are PLACEHOLDERS — swap to their real brand. Photo tiles
+     are placeholders for real job photos. Not affiliated / not live for the business. ░░ -->
+
+<header class="hdr">
+  <div class="wrap">
+    <a href="#top" class="logo">
+      <span class="mark">EM</span>
+      <span><b>Elite Maintenance</b><span>Services Tasmania</span></span>
+    </a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#why">Why us</a>
+      <a href="#area">Service area</a>
+      <a href="#quote">Reviews</a>
+    </nav>
+    <a href="tel:0459616119" class="phone">📞 <span>0459 616 119</span></a>
+    <a href="#quote" class="btn btn--cta">Free quote</a>
+    <button class="toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="chip">⭐ 92% recommend · Launceston &amp; Northern Tasmania</span>
+      <h1>Roofs, gutters &amp; pressure cleaning — <span class="u">done properly.</span></h1>
+      <p class="lede">Your local Launceston maintenance team for roof &amp; gutter clean-outs, high-pressure cleaning, solar panels, mowing and more. Reliable, fully equipped, and tidy — book a job and we'll take care of it.</p>
+      <div class="hero-cta">
+        <a href="#quote" class="btn btn--accent btn--lg">Get a free quote →</a>
+        <a href="tel:0459616119" class="btn btn--ghost btn--lg">📞 Call 0459 616 119</a>
+      </div>
+      <div class="trust">
+        <div><span class="n">92%</span> recommend</div>
+        <div><span class="stars">★★★★★</span> 9 reviews</div>
+        <div><span class="n">Local</span> &amp; reliable</div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="top"><div class="ic">🏠</div><div class="ph">📷 Your work photo here</div></div>
+      <div class="bot"><div><b>Free, no-obligation quotes</b><small>Fast response · fully equipped</small></div><a href="#quote" class="btn btn--cta">Book →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">What we do</span>
+      <h2>One team for the whole property.</h2>
+      <p>From the roofline to the lawn — the outdoor &amp; cleaning jobs you'd rather not do yourself.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc"><div class="ic">🏠</div><h3>Roof, Gutter &amp; Downpipe Clean-outs</h3><p>Clear blocked gutters and downpipes before they cause damage.</p></article>
+      <article class="svc"><div class="ic">☀️</div><h3>Solar Panel Cleaning</h3><p>Dirty panels lose output — we get them clean and producing again.</p></article>
+      <article class="svc"><div class="ic">💦</div><h3>High-Pressure Cleaning</h3><p>Driveways, paths, walls &amp; patios brought back to life.</p></article>
+      <article class="svc"><div class="ic">🌿</div><h3>Lawn Mowing</h3><p>Tidy, regular mowing to keep your yard looking sharp.</p></article>
+      <article class="svc"><div class="ic">🪚</div><h3>Tree Lopping</h3><p>Overgrown or overhanging branches cut back safely.</p></article>
+      <article class="svc"><div class="ic">📹</div><h3>Wireless CCTV Installs</h3><p>Wi-Fi based cameras set up so you can keep an eye on your place.</p></article>
+      <article class="svc"><div class="ic">🧽</div><h3>House Cleans</h3><p>Interior cleans done thoroughly, top to bottom.</p></article>
+      <article class="svc"><div class="ic">📦</div><h3>End-of-Lease Cleans</h3><p>Bond cleans done to get your deposit back, stress-free.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow" style="color:#5fb0ff">Why Elite</span>
+      <h2>Local, reliable, and properly equipped.</h2>
+      <p>The reasons Launceston keeps calling us back.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card"><div class="ic">📍</div><h3>Genuinely local</h3><p>Based right here in Launceston — we know the area and we're just down the road.</p></div>
+      <div class="why-card"><div class="ic">⭐</div><h3>92% recommend</h3><p>Real reviews from real locals who've had us out and called us back.</p></div>
+      <div class="why-card"><div class="ic">🧰</div><h3>One call, many jobs</h3><p>Roof, lawn, pressure cleaning or a bond clean — sort it all with one team.</p></div>
+      <div class="why-card"><div class="ic">⏱️</div><h3>Fast &amp; tidy</h3><p>Quick to quote, on time, and we leave the place spotless.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <div class="wrap">
+    <div class="shead">
+      <span class="eyebrow">Recent work</span>
+      <h2>The before &amp; after.</h2>
+      <p>Your real job photos slot straight in here — nothing sells a clean like the proof.</p>
+    </div>
+    <div class="gal">
+      <div class="gtile"><div><div class="ic">🏠</div></div><span>Gutter clean-out</span></div>
+      <div class="gtile"><div><div class="ic">💦</div></div><span>Pressure wash</span></div>
+      <div class="gtile"><div><div class="ic">☀️</div></div><span>Solar panel clean</span></div>
+      <div class="gtile"><div><div class="ic">🌿</div></div><span>Lawn &amp; garden</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote" id="quote">
+  <div class="wrap">
+    <div>
+      <h2>Get a free quote today.</h2>
+      <p>Tell us what you need done and we'll get back to you fast with a no-obligation price. No job too big or small.</p>
+      <a href="tel:0459616119" class="callbig">📞 0459 616 119</a>
+    </div>
+    <form class="qform" id="qform" onsubmit="event.preventDefault();this.style.display='none';document.getElementById('qok').style.display='block';">
+      <h3>Request your quote</h3>
+      <p class="sub">We'll be in touch within a day — usually much sooner.</p>
+      <div class="qrow">
+        <div class="qfield"><label>Your name</label><input type="text" required placeholder="First &amp; last" /></div>
+        <div class="qfield"><label>Phone</label><input type="tel" required placeholder="04xx xxx xxx" /></div>
+      </div>
+      <div class="qfield"><label>Email</label><input type="email" placeholder="you@email.com" /></div>
+      <div class="qfield"><label>What do you need done?</label>
+        <select>
+          <option>Roof / gutter clean-out</option>
+          <option>High-pressure cleaning</option>
+          <option>Solar panel cleaning</option>
+          <option>Lawn mowing</option>
+          <option>Tree lopping</option>
+          <option>House clean</option>
+          <option>End-of-lease clean</option>
+          <option>CCTV install</option>
+          <option>Something else / a few things</option>
+        </select>
+      </div>
+      <div class="qfield"><label>Details</label><textarea placeholder="Your suburb &amp; a quick description…"></textarea></div>
+      <button type="submit" class="btn btn--cta btn--lg" style="width:100%">Send my quote request →</button>
+      <p class="qnote">No obligation. Or just call 0459 616 119.</p>
+    </form>
+    <div id="qok" style="display:none" class="qform">
+      <h3>✅ Got it!</h3>
+      <p class="sub" style="margin-bottom:0">Thanks — your request is in. We'll be in touch shortly to sort your quote.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AREA -->
+<section class="area" id="area">
+  <div class="wrap">
+    <span class="eyebrow" style="font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)">Where we work</span>
+    <h2 style="margin-top:.5rem">Servicing Launceston &amp; Northern Tasmania.</h2>
+    <p>If you're in the greater Launceston region, we'll come to you. Not sure if we cover your spot? Just ask.</p>
+    <div class="towns">
+      <span>Launceston</span><span>Riverside</span><span>Prospect</span><span>Newnham</span><span>Kings Meadows</span>
+      <span>Mowbray</span><span>Legana</span><span>Trevallyn</span><span>Norwood</span><span>&amp; surrounds</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#top" class="logo" style="margin-bottom:1rem"><span class="mark">EM</span><span><b>Elite Maintenance</b><span>Services Tasmania</span></span></a>
+        <p>Roof, gutter &amp; pressure cleaning, solar, mowing, tree lopping, house &amp; end-of-lease cleans — across Launceston &amp; northern Tas.</p>
+      </div>
+      <div>
+        <div class="ttl">Get in touch</div>
+        <a href="tel:0459616119">📞 0459 616 119</a>
+        <a href="mailto:emservicestas@outlook.com">✉ emservicestas@outlook.com</a>
+        <a href="https://www.facebook.com/EMServicesTas/" target="_blank" rel="noopener">Facebook →</a>
+      </div>
+      <div>
+        <div class="ttl">Quick links</div>
+        <a href="#services">Services</a>
+        <a href="#quote">Free quote</a>
+        <a href="#area">Service area</a>
+      </div>
+    </div>
+    <div class="credit">
+      <span>© Elite Maintenance Services Tasmania · Launceston, TAS</span>
+      <span>Concept site by <a href="https://studiovaleagency.com" target="_blank" rel="noopener">Studio Vale Agency</a> — sample only</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelector('.toggle').addEventListener('click',function(){
+    var n=document.querySelector('.hdr nav');
+    var open=n.style.display==='flex';
+    if(open){n.style.display='none';return;}
+    n.style.display='flex';n.style.position='absolute';n.style.top='100%';n.style.left='0';n.style.right='0';
+    n.style.flexDirection='column';n.style.background='#fff';n.style.padding='1.1rem 1.5rem';n.style.gap='1rem';
+    n.style.borderBottom='1px solid var(--line)';
+  });
+</script>
+</body>
+</html>
