@@ -54,11 +54,11 @@
     .buy-modal .buying { color: var(--lime); font-weight: 800; margin: .3rem 0 1.2rem; }
     .buy-modal .intro { color: var(--grey); font-size: .92rem; margin-bottom: 1.2rem; }
     .bform { display: grid; gap: 1rem; }
-    .bform .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .bfield { display: grid; gap: .35rem; }
+    .bform .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
+    .bfield { display: grid; gap: .35rem; min-width: 0; }
     .bfield.full { grid-column: 1 / -1; }
     .bfield label { font-weight: 700; font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; color: var(--grey); }
-    .bfield input { font-family: var(--font); font-size: 1rem; color: var(--white); background: #0d0d0d; border: 2px solid var(--line); border-radius: 0; padding: .8rem 1rem; }
+    .bfield input { width: 100%; box-sizing: border-box; font-family: var(--font); font-size: 1rem; color: var(--white); background: #0d0d0d; border: 2px solid var(--line); border-radius: 0; padding: .8rem 1rem; }
     .bfield input:focus { outline: none; border-color: var(--lime); }
     .bfield .hint { font-size: .76rem; color: var(--grey-2); }
     .buy-actions { display: flex; gap: .8rem; align-items: center; margin-top: .4rem; }
