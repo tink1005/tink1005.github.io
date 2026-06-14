@@ -27,7 +27,7 @@ Agency Management as supporting) · Work (Wash Kings, Sentri) · Pricing · CTA 
 - 50% deposit to begin, balance on delivery.
 
 ## Make it real
-- Wire the contact form to email (Web3Forms / Formspree → harrisa1005@outlook.com).
+- Wire the contact form to email (Web3Forms / Formspree → hello@studiovaleagency.com).
 - Add a custom domain (e.g. `studiovale.com.au`) via repo Settings → Pages.
 
 ## Run locally
