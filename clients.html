@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Login — Studio Vale Agency</title>
+  <meta name="description" content="Studio Vale Agency client portal. Enter your password to view your brand dashboard." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050505'/%3E%3Ctext x='16' y='24' font-size='22' font-weight='900' text-anchor='middle' fill='%23ccff00' font-family='Arial'%3EV%3C/text%3E%3C/svg%3E" />
+  <style>
+    .login-hdr { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; gap: 1rem; padding: 1rem clamp(1rem,4vw,3rem); background: rgba(5,5,5,.85); backdrop-filter: blur(10px); border-bottom: 2px solid var(--lime); }
+    .login-hdr .back { margin-left: auto; font-weight: 700; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--grey); }
+    .login-hdr .back:hover { color: var(--lime); }
+
+    .login-wrap { min-height: 78vh; display: grid; place-items: center; padding: clamp(2rem,8vw,5rem) clamp(1rem,4vw,2rem); }
+    .login-card { width: 100%; max-width: 440px; background: var(--pine, #0f1100); border: 2px solid var(--lime); padding: clamp(1.8rem,5vw,2.8rem); text-align: center; }
+    .login-card .pill { display: inline-block; font-weight: 800; font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--black); background: var(--lime); padding: .35rem .8rem; }
+    .login-card h1 { font-weight: 900; text-transform: uppercase; font-size: clamp(2rem,6vw,2.8rem); line-height: 1; letter-spacing: -0.02em; margin: 1.2rem 0 .6rem; }
+    .login-card .lime { color: var(--lime); }
+    .login-card p.sub { color: var(--grey); font-size: .98rem; margin-bottom: 1.6rem; }
+    .login-form { display: grid; gap: .9rem; text-align: left; }
+    .login-form label { font-weight: 700; font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; color: var(--grey); }
+    .login-form input { font-family: var(--font); font-size: 1.05rem; color: var(--white); background: var(--black); border: 2px solid var(--line); border-radius: 0; padding: .9rem 1rem; letter-spacing: .02em; }
+    .login-form input:focus { outline: none; border-color: var(--lime); }
+    .login-err { display: none; color: #ff5a5a; font-weight: 700; font-size: .9rem; text-align: center; }
+    .login-note { margin-top: 1.4rem; font-size: .82rem; color: var(--grey-2); line-height: 1.5; }
+    .login-note a { color: var(--lime); }
+  </style>
+</head>
+<body>
+  <header class="login-hdr">
+    <a class="wordmark" href="index.html">STUDIOVALEAGENCY<span class="dot">.</span></a>
+    <a class="back" href="index.html">← Back to site</a>
+  </header>
+
+  <main class="login-wrap">
+    <div class="login-card">
+      <span class="pill">Client Portal</span>
+      <h1>Welcome<span class="lime">.</span></h1>
+      <p class="sub">Enter the password I sent you to open your brand dashboard.</p>
+      <form class="login-form" id="login-form" novalidate>
+        <div>
+          <label for="pw">Your password</label>
+          <input id="pw" type="password" autocomplete="off" placeholder="••••••••••" required autofocus />
+        </div>
+        <button class="btn btn--lime btn--lg btn--block" type="submit">Enter my dashboard →</button>
+        <p class="login-err" id="login-err">Hmm — that password didn't match. Double-check it, or message me.</p>
+      </form>
+      <p class="login-note">Don't have a password yet? <a href="book.html">Book a free call</a> and let's get your brand started.</p>
+    </div>
+  </main>
+
+  <!--
+    CLIENT PORTAL — how it works (for Apryl):
+    Each client gets a password. We store only the SHA-256 HASH of it here, never the plain password,
+    and map it to that client's page. Enter password -> hashed in the browser -> matched -> redirected.
+
+    HONESTY NOTE: because this site lives in a PUBLIC repo, this is a convenience gate, not a vault —
+    a determined person could read the source and find the client page paths. The pages only contain
+    each client's offerings + a link to their (already shareable) live site + a buy form, so nothing
+    secret is exposed. Don't put anything truly private on a client page.
+
+    TO ADD A CLIENT:
+      1) Pick a password and give it to them privately.
+      2) Get its hash:  printf '%s' 'their-password' | shasum -a 256
+      3) Add a line to CLIENTS below:  "<that-hash>": "clients/their-slug.html",
+      4) Create clients/their-slug.html (copy clients/wash-kings.html as a template).
+  -->
+  <script>
+    // hash -> client page
+    const CLIENTS = {
+      // password: wash-kings-2026
+      "6374c7fc4201f046c3b4e02284da8c4c3a5cd3d0bdca81042fd46d34ddb4701c": "clients/wash-kings.html"
+    };
+
+    async function sha256(str) {
+      const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+      return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+    }
+
+    const form = document.getElementById("login-form");
+    const err = document.getElementById("login-err");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      err.style.display = "none";
+      const pw = document.getElementById("pw").value.trim();
+      if (!pw) return;
+      const dest = CLIENTS[await sha256(pw)];
+      if (dest) {
+        window.location.href = dest;
+      } else {
+        err.style.display = "block";
+        document.getElementById("pw").select();
+      }
+    });
+  </script>
+</body>
+</html>
