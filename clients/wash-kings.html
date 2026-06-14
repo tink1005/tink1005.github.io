@@ -58,6 +58,7 @@
     .bfield { display: grid; gap: .35rem; min-width: 0; }
     .bfield.full { grid-column: 1 / -1; }
     .bfield label { font-weight: 700; font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; color: var(--grey); }
+    .bfield label .opt { font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--grey-2); }
     .bfield input { width: 100%; box-sizing: border-box; font-family: var(--font); font-size: 1rem; color: var(--white); background: #0d0d0d; border: 2px solid var(--line); border-radius: 0; padding: .8rem 1rem; }
     .bfield input:focus { outline: none; border-color: var(--lime); }
     .bfield .hint { font-size: .76rem; color: var(--grey-2); }
@@ -138,7 +139,7 @@
         </div>
         <div class="row">
           <div class="bfield"><label for="f-email">Email address</label><input id="f-email" name="email" type="email" placeholder="you@email.com" required /></div>
-          <div class="bfield"><label for="f-discord">Discord username</label><input id="f-discord" name="discord" type="text" placeholder="yourname" /><span class="hint">So I can message you directly — never shown on your site.</span></div>
+          <div class="bfield"><label for="f-discord">Discord username <span class="opt">(optional)</span></label><input id="f-discord" name="discord" type="text" placeholder="yourname" /><span class="hint">So I can message you directly — never shown on your site.</span></div>
         </div>
         <div class="buy-actions">
           <button class="btn btn--lime btn--lg" type="submit" id="buy-submit">Continue to payment →</button>
